@@ -107,24 +107,6 @@ objectClass: List
 cn: ncifLanguage
 description: Selection for ncifLanguage
 
-dn: cn=ncifZCMLanguageUIDKey,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
-changetype: add
-objectClass: List
-cn: ncifZCMLanguageUIDKey
-description: Selection for ncifZCMLanguageUIDKey
-
-dn: cn=ncifZCMMSOfficeUIDKey,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
-changetype: add
-objectClass: List
-cn: ncifZCMMSOfficeUIDKey
-description: Selection for ncifZCMMSOfficeUIDKey
-
-dn: cn=ncifZCMOSUIDKey,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
-changetype: add
-objectClass: List
-cn: ncifZCMOSUIDKey
-description: Selection for ncifZCMOSUIDKey
-
 dn: cn=ncifXMLSnippets,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
 changetype: add
 objectClass: List
