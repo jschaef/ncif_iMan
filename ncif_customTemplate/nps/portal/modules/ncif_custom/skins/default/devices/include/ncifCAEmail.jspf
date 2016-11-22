@@ -1,0 +1,36 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifCAEmail.jspf"  %>  
+	--%>
+
+      <%-- ncifCAEmail --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifCAEmailDisplayName}"/>:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifCAEmail.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifCAEmail" value="<c:out value="${eDir$target$ncifCAEmail}" escapeXml="false"/>">
+            </c:if>
+            <INPUT type="text" name="_ncifCAEmail" id="spinner_ncifCAEmail" value="<x:out select="$edasXml/edas/ncifCAEmail/value"/>" size=60  maxlength=64512 onchange='return validateLengthField(this, 0, 64512); postUiHandlerEvent("ncifCAEmail", "change")'<c:if test="${!edasRights.target.ncifCAEmail.writeable}">DISABLED</c:if> >
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifCAEmail/@mode"/></c:set>
+            <iman:mooMode name="_ncifCAEmail_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifCAEmail = new UiObject();
+         <c:if test="${edasRights.target.ncifCAEmail.writeable}">
+            addToNotificationList('ncifCAEmail', 'uih_textfield');
+            addActionHandler('ncifCAEmail', 'uiah_textfield');
+         </c:if>
+      </SCRIPT>
+      <SCRIPT>
+         window.uiObject_ncifCAEmail.m_lowerBound = 0;
+         window.uiObject_ncifCAEmail.m_upperBound = 64512;
+         window.uiObject_ncifCAEmail.m_type = "string";
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+

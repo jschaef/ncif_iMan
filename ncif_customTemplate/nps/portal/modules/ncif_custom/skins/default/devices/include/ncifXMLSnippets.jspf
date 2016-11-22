@@ -1,0 +1,54 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifXMLSnippets.jspf"  %>  
+	--%>
+
+   <%-- ncifXMLSnippets --%>
+   <TR>
+      <TD align="left" colspan="2">
+         Xml File Selection to define a Service Type (multiple selections possible/desired):<%= ncif_mandatory %>&nbsp;&nbsp;
+      </TD>
+   </TR>
+   <TR>
+      <TD>
+         <c:if test="${edasRights.target.ncifXMLSnippets.writeable}">
+            <INPUT type="hidden" name="eDir$target$ncifXMLSnippets" value="<c:out value="${eDir$target$ncifXMLSnippets}" escapeXml="false"/>">
+         </c:if>
+	
+				<INPUT type="checkbox" name="_ncifXMLSnippetscheckAll" onClick="checkAllncifXMLSnippets(this.form)" value="checkAll"><iman:string key="MVCheckboxToggleAll"/><br>
+	
+	<%= getMvCheckboxesFromList( request, ncsCommon.getTree().getOe(), "ncifXMLSnippets", "ncifXMLSnippets" ) %>
+
+	<SCRIPT language="javascript">
+		function checkAllncifXMLSnippets(myFormName)
+		{
+		  for(var i=0;i<mvcheckbox_count_ncifXMLSnippets; i++)
+		  {
+			  if(myFormName._ncifXMLSnippetscheckAll.checked)
+			  {
+				 eval("myFormName._ncifXMLSnippets" + i + ".checked='checked'");
+			    eval("mvcheckbox_onclick('ncifXMLSnippets', i )");
+			  }
+			  else
+			  {
+				 eval("myFormName._ncifXMLSnippets" + i + ".checked=null");
+			  }
+		  }
+		}
+	</SCRIPT>
+
+	
+	
+		</TD>
+      <TD valign="top">
+         <c:set var="mode"><x:out select="$edasXml/edas/ncifXMLSnippets/@mode"/></c:set>
+         <iman:mooMode name="_ncifXMLSnippets_mode" value="${mode}" multi="true" />
+      </TD>
+   </TR>
+   <SCRIPT>
+      window.uiObject_ncifXMLSnippets = new UiObject();
+      <c:if test="${edasRights.target.ncifXMLSnippets.writeable}">
+         addToNotificationList('ncifXMLSnippets', 'uih_mvCheckbox2');
+         addActionHandler('ncifXMLSnippets', 'uiah_mvcheckbox');
+      </c:if>
+   </SCRIPT>
+   <TR><TD height="9"></TD></TR>

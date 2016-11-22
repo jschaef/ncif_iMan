@@ -1,0 +1,40 @@
+<%--
+	<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifDHCPGroupCtx.jspf"  %>  
+--%>
+
+
+      <%-- ncifDHCPGroupCtx --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifDHCPGroupCtxDisplayName}"/>:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifDHCPGroupCtx.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifDHCPGroupCtx" value="<c:out value="${eDir$target$ncifDHCPGroupCtx}" escapeXml="false"/>">
+            </c:if>
+            <INPUT type="text" name="_ncifDHCPGroupCtx" id="spinner_ncifDHCPGroupCtx" value="<x:out select="$edasXml/edas/ncifDHCPGroupCtx/value"/>" size=<iman:string key="UI.textboxSize"/> style="width:<iman:string key="UI.textboxPixel"/>"  <c:if test="${!edasRights.target.ncifDHCPGroupCtx.writeable}">DISABLED</c:if> >            <c:if test="${edasRights.target.ncifDHCPGroupCtx.writeable}">
+               <iman:os typeFilter="*" control="_ncifDHCPGroupCtx" />
+            </c:if>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifDHCPGroupCtx/@mode"/></c:set>
+            <iman:mooMode name="_ncifDHCPGroupCtx_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifDHCPGroupCtx = new UiObject();
+         <c:if test="${edasRights.target.ncifDHCPGroupCtx.writeable}">
+            addToNotificationList('ncifDHCPGroupCtx', 'uih_textfield');
+            addActionHandler('ncifDHCPGroupCtx', 'uiah_textfield');
+         </c:if>
+      </SCRIPT>
+      <SCRIPT>
+         window.uiObject_ncifDHCPGroupCtx.m_lowerBound = null;
+         window.uiObject_ncifDHCPGroupCtx.m_upperBound = null;
+         window.uiObject_ncifDHCPGroupCtx.m_type = "string";
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+

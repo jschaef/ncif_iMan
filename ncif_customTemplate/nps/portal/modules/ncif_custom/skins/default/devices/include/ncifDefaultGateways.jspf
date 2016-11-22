@@ -1,0 +1,36 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifDefaultGateways.jspf"  %>
+	--%>
+	
+	<%-- ncifDefaultGateways --%>
+   <TR>
+      <TD align="left" colspan="2">
+         Default Gateway(s) (CIDR notation, e.g. 10.86.2.10/24):<%= ncif_mandatory %>&nbsp;&nbsp;
+      </TD>
+   </TR>
+   <TR>
+      <TD>
+         <c:if test="${edasRights.target.ncifDefaultGateways.writeable}">
+            <INPUT type="hidden" name="eDir$target$ncifDefaultGateways" value="<c:out value="${eDir$target$ncifDefaultGateways}" escapeXml="false"/>">
+         </c:if>
+         <x:set var="MVStringEditor_xmlNodeSet" select="$edasXml/edas/ncifDefaultGateways" scope="request"/>
+         <iman:mved maxLength="64512" 
+						  regExpression="^(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\/(3[0-2]|[1-2]?[0-9])$" 
+						  regExpressionMsg="Invalid IP Address and prefix (e.g. 10.1.15.26/24)" 
+						  readonly="${!edasRights.target.ncifDefaultGateways.writeable}" enforceUnique="true" ignoreCase="true" minLength="0" name="_ncifDefaultGateways" 
+						  />
+			</TD>
+      <TD valign="top">
+         <c:set var="mode"><x:out select="$edasXml/edas/ncifDefaultGateways/@mode"/></c:set>
+         <iman:mooMode name="_ncifDefaultGateways_mode" value="${mode}" multi="true" />
+      </TD>
+   </TR>
+   <SCRIPT>
+      window.uiObject_ncifDefaultGateways = new UiObject();
+      <c:if test="${edasRights.target.ncifDefaultGateways.writeable}">
+         addToNotificationList('ncifDefaultGateways', 'uih_mvStringEditor');
+      </c:if>
+   </SCRIPT>
+   <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>

@@ -1,0 +1,244 @@
+<plugins>
+
+   <private-page>
+      <id>ncsEMEA.ncs_MasterSlave_testNcs</id>
+      <version>1.0</version>
+      <required-version>1.0</required-version>
+      <class-name>com.novell.ncsEMEA.util.ncs_BacklinkGadget</class-name>
+      <merge-template>ncsEMEA.ncs_BacklinkPage</merge-template>
+      <description />
+      <resource-properties-file>spResources</resource-properties-file>
+      <display-name-key>page_MasterSlave_testNcs</display-name-key>
+
+      <object-type-name>User</object-type-name>
+
+      <chapter>
+         <id>ncsEMEA.MasterSlave_testNcs</id>
+         <resource-properties-file>spResources</resource-properties-file>
+         <display-name-key>chapter_MasterSlave_testNcs</display-name-key>
+      </chapter>
+
+      <rights-assignment>
+         <attribute-name>Object Class</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>spSlaveDN</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+
+      <handled-attribute-name>spSlaveDN</handled-attribute-name>
+
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>netscape</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+
+      <url-param>
+         <param-key>obj1_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj1_attr1</param-key>
+         <param-value>spSlaveDN</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj1_aux1</param-key>
+         <param-value>spAuxMaster</param-value>
+      </url-param>
+
+      <url-param>
+         <param-key>obj2_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj2_attr1</param-key>
+         <param-value>spMasterDN</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj2_aux2</param-key>
+         <param-value>spAuxSlave</param-value>
+      </url-param>
+
+   </private-page>
+   
+      
+   
+   <private-page>
+      <id>ncsEMEA.ncs_SlaveMaster_testNcs</id>
+      <version>1.0</version>
+      <required-version>1.0</required-version>
+      <class-name>com.novell.ncsEMEA.util.ncs_BacklinkGadget</class-name>
+      <merge-template>ncsEMEA.ncs_BacklinkPage</merge-template>
+      <description />
+      <resource-properties-file>spResources</resource-properties-file>
+      <display-name-key>page_SlaveMaster_testNcs</display-name-key>
+
+      <object-type-name>User</object-type-name>
+
+      <chapter>
+         <id>ncsEMEA.MasterSlave_testNcs</id>
+         <resource-properties-file>spResources</resource-properties-file>
+         <display-name-key>chapter_MasterSlave_testNcs</display-name-key>
+      </chapter>
+
+      <rights-assignment>
+         <attribute-name>Object Class</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>spMasterDN</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+
+      <handled-attribute-name>spSlaveDN</handled-attribute-name>
+
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>netscape</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+
+      <url-param>
+         <param-key>obj1_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj1_attr1</param-key>
+         <param-value>spMasterDN</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj1_aux1</param-key>
+         <param-value>spAuxSlave</param-value>
+      </url-param>
+
+      <url-param>
+         <param-key>obj2_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj2_attr1</param-key>
+         <param-value>spSlaveDN</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj2_aux2</param-key>
+         <param-value>spAuxMaster</param-value>
+      </url-param>
+   </private-page>
+   
+      
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+      <private-page>
+      <id>ncsEMEA.ncs_ManagerReports_testNcs</id>
+      <version>1.0</version>
+      <required-version>1.0</required-version>
+      <class-name>com.novell.ncsEMEA.util.ncs_BacklinkGadget</class-name>
+      <merge-template>ncsEMEA.ncs_BacklinkPage</merge-template>
+      <description />
+      <resource-properties-file>spResources</resource-properties-file>
+      <display-name-key>page_ManagerReports_testNcs</display-name-key>
+
+      <object-type-name>User</object-type-name>
+
+      <chapter>
+         <id>ncsEMEA.ManagerReports_testNcs</id>
+         <resource-properties-file>spResources</resource-properties-file>
+         <display-name-key>chapter_ManagerReports_testNcs</display-name-key>
+      </chapter>
+
+      <rights-assignment>
+         <attribute-name>directReports</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+
+      <handled-attribute-name>directReports</handled-attribute-name>
+
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>netscape</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+
+      <url-param>
+         <param-key>obj1_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj1_attr1</param-key>
+         <param-value>directReports</param-value>
+      </url-param>
+
+      <url-param>
+         <param-key>obj2_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj2_attr1</param-key>
+         <param-value>manager</param-value>
+      </url-param>
+   </private-page>
+ 
+   
+     
+   <private-page>
+      <id>ncsEMEA.ncs_ReportsManager_testNcs</id>
+      <version>1.0</version>
+      <required-version>1.0</required-version>
+      <class-name>com.novell.ncsEMEA.util.ncs_BacklinkGadget</class-name>
+      <merge-template>ncsEMEA.ncs_BacklinkPage</merge-template>
+      <description />
+      <resource-properties-file>spResources</resource-properties-file>
+      <display-name-key>page_ReportsManager_testNcs</display-name-key>
+
+      <object-type-name>User</object-type-name>
+
+      <chapter>
+         <id>ncsEMEA.ManagerReports_testNcs</id>
+         <resource-properties-file>spResources</resource-properties-file>
+         <display-name-key>chapter_ManagerReports_testNcs</display-name-key>
+      </chapter>
+
+      <rights-assignment>
+         <attribute-name>manager</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+
+      <handled-attribute-name>manager</handled-attribute-name>
+
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>netscape</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+
+      <url-param>
+         <param-key>obj1_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj1_attr1</param-key>
+         <param-value>manager</param-value>
+      </url-param>
+
+      <url-param>
+         <param-key>obj2_type</param-key>
+         <param-value>User</param-value>
+      </url-param>
+      <url-param>
+         <param-key>obj2_attr1</param-key>
+         <param-value>directReports</param-value>
+      </url-param>
+   </private-page>
+   
+  
+   
+   </plugins>

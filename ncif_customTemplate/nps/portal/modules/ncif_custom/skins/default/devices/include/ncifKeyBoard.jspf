@@ -1,0 +1,72 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifKeyBoard.jspf"  %>  
+	--%>
+	
+      <%-- ncifKeyBoard --%>
+      <TR>
+         <TD align="left" colspan="2">
+             YaST internal Keyboard Setting (e.g. german):<%= ncif_mandatory %>&nbsp;&nbsp;
+        </TD>
+      </TR>
+      <TR>
+         <TD>
+				<c:if test="${edasRights.target.ncifKeyBoard.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifKeyBoard" value="<c:out value="${eDir$target$ncifKeyBoard}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifKeyBoard = null; </SCRIPT>
+            <SELECT name="_ncifKeyBoard" id="_ncifKeyBoard" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifKeyBoard', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+					<%= getSelectOptionsFromList( request, ncsCommon.getTree().getOe(), "ncifKeyBoard", "ncifKeyBoard" ) %>
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifKeyBoard/@mode"/></c:set>
+            <iman:mooMode name="_ncifKeyBoard_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifKeyBoard = new UiObject();
+         <c:if test="${edasRights.target.ncifKeyBoard.writeable}">
+            addToNotificationList('ncifKeyBoard', 'uih_mvSelect');
+            addActionHandler('ncifKeyBoard', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>
+
+	
+	<%-- ncifKeyBoard 
+      <TR>
+         <TD align="left" colspan="2">
+            YaST internal Keyboard Setting (e.g. german):<%= ncif_mandatory %>&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifKeyBoard.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifKeyBoard" value="<c:out value="${eDir$target$ncifKeyBoard}" escapeXml="false"/>">
+            </c:if>
+            <INPUT type="text" name="_ncifKeyBoard" id="spinner_ncifKeyBoard" value="<x:out select="$edasXml/edas/ncifKeyBoard/value"/>" size=<iman:string key="UI.textboxSize"/> style="width:<iman:string key="UI.textboxPixel"/>"  <c:if test="${!edasRights.target.ncifKeyBoard.writeable}">DISABLED</c:if> >
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifKeyBoard/@mode"/></c:set>
+            <iman:mooMode name="_ncifKeyBoard_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifKeyBoard = new UiObject();
+         <c:if test="${edasRights.target.ncifKeyBoard.writeable}">
+            addToNotificationList('ncifKeyBoard', 'uih_textfield');
+            addActionHandler('ncifKeyBoard', 'uiah_textfield');
+         </c:if>
+      </SCRIPT>
+      <SCRIPT>
+         window.uiObject_ncifKeyBoard.m_lowerBound = null;
+         window.uiObject_ncifKeyBoard.m_upperBound = null;
+         window.uiObject_ncifKeyBoard.m_type = "string";
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	  <%	ncif_mandatory			=	""; // reset  %>
+--%>

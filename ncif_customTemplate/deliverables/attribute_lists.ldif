@@ -1,0 +1,150 @@
+version: 1
+
+dn: cn=@CUSTOMER.ATTR.PREFIX.ATTR@Country,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: @CUSTOMER.ATTR.PREFIX.ATTR@Country
+description: Selection for @CUSTOMER.ATTR.PREFIX.ATTR@Country
+
+dn: cn=@CUSTOMER.ATTR.PREFIX.ATTR@Company,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: @CUSTOMER.ATTR.PREFIX.ATTR@Company
+description: Selection for @CUSTOMER.ATTR.PREFIX.ATTR@Company
+
+dn: cn=@CUSTOMER.ATTR.PREFIX.ATTR@Location,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: @CUSTOMER.ATTR.PREFIX.ATTR@Location
+description: Selection for @CUSTOMER.ATTR.PREFIX.ATTR@Location
+
+dn: cn=@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: @CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess
+description: Selection for @CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess
+
+dn: cn=ncifDHCPInterfaces,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifDHCPInterfaces
+description: Selection for ncifDHCPInterfaces
+l: eth0
+l: eth1
+l: eth2
+l: wlan0
+l: ANY
+
+dn: cn=ncifPartFile,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifPartFile
+description: Selection for ncifPartFile
+l: part-VM-100G-lvm.xml
+l: part-VM-130G-lvm.xml
+l: part-VM-ZCM-lvm.xml
+
+dn: cn=ncifSoftFile,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifSoftFile
+description: Selection for ncifSoftFile
+l: soft-oes11sp2_NISS.xml
+l: soft-oes11sp2_eDir.xml
+
+dn: cn=ncifServerType,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifServerType
+description: Selection for ncifServerType
+l: oes11sp2-TST
+l: oes11sp2-TST-CD
+l: sles11sp3-TST
+l: sles11sp3-TST-CD
+
+dn: cn=ncifXMLSnippets,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifXMLSnippets
+description: Selection for ncifXMLSnippets
+l: oes11/oes11sp2_base.xml
+l: oes11/nss.xml
+l: oes11/cifs.xml
+l: oes11/iprint.xml
+l: oes11/imanager.xml
+l: oes11/dns.xml
+l: oes11/dhcp.xml
+l: oes11/netstorage.xml
+l: oes11/afp.xml
+l: sles11/kdump_64M.xml
+l: sles11/kdump_128M.xml
+l: sles11/kdump_256M.xml
+l: sles11/kdump_512M.xml
+
+
+
+dn: cn=dialupAccess,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: dialupAccess
+description: Selection for dialupAccess
+
+dn: cn=ncifZCMKeys,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifZCMKeys
+description: Selection for ncifZCMKeys
+
+dn: cn=ncifKeyBoard,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifKeyBoard
+description: Selection for ncifKeyBoard
+
+dn: cn=ncifLanguage,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifLanguage
+description: Selection for ncifLanguage
+
+dn: cn=ncifZCMLanguageUIDKey,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifZCMLanguageUIDKey
+description: Selection for ncifZCMLanguageUIDKey
+
+dn: cn=ncifZCMMSOfficeUIDKey,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifZCMMSOfficeUIDKey
+description: Selection for ncifZCMMSOfficeUIDKey
+
+dn: cn=ncifZCMOSUIDKey,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifZCMOSUIDKey
+description: Selection for ncifZCMOSUIDKey
+
+dn: cn=ncifXMLSnippets,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifXMLSnippets
+description: Selection for ncifXMLSnippets
+
+dn: cn=ncifHWClock,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifHWClock
+description: Selection for ncifHWClock
+
+dn: cn=ncifSLPScopes,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifSLPScopes
+description: Selection for ncifSLPScopes
+
+dn: cn=ncifTimeZone,ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: List
+cn: ncifTimeZone
+description: Selection for ncifTimeZone

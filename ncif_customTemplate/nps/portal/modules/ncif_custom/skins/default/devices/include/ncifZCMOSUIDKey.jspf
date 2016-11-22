@@ -1,0 +1,70 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifZCMOSUIDKey.jspf"  %>  
+	--%>
+	
+      <%-- ncifZCMOSUIDKey --%>
+      <TR>
+         <TD align="left" colspan="2">
+           ZCM Windows Installation OS Code<br> (e.g. W7-SP1-EE-x64):<%= ncif_mandatory %>&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+				<c:if test="${edasRights.target.ncifZCMOSUIDKey.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifZCMOSUIDKey" value="<c:out value="${eDir$target$ncifZCMOSUIDKey}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifZCMOSUIDKey = null; </SCRIPT>
+            <SELECT name="_ncifZCMOSUIDKey" id="_ncifZCMOSUIDKey" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifZCMOSUIDKey', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+					<%= getSelectOptionsFromList( request, ncsCommon.getTree().getOe(), "ncifZCMOSUIDKey", "ncifZCMOSUIDKey" ) %>
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifZCMOSUIDKey/@mode"/></c:set>
+            <iman:mooMode name="_ncifZCMOSUIDKey_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifZCMOSUIDKey = new UiObject();
+         <c:if test="${edasRights.target.ncifZCMOSUIDKey.writeable}">
+            addToNotificationList('ncifZCMOSUIDKey', 'uih_mvSelect');
+            addActionHandler('ncifZCMOSUIDKey', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>
+
+	
+	<%--
+	      <TR>
+         <TD align="left" colspan="2">
+            ZCM Windows Installation OS Code<br> (ex.: W7-SP1-EE-x64):&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifZCMOSUIDKey.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifZCMOSUIDKey" value="<c:out value="${eDir$target$ncifZCMOSUIDKey}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifZCMOSUIDKey = null; </SCRIPT>
+            <SELECT name="_ncifZCMOSUIDKey" id="_ncifZCMOSUIDKey" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifZCMOSUIDKey', this)">
+            <c:set var="testValue" value="W7-SP1-EE-x64"/>
+               <OPTION value="W7-SP1-EE-x64" <x:if select="count($edasXml/edas/ncifZCMOSUIDKey/value[text()=$testValue])">selected</x:if>>W7-SP1-EE-x64
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifZCMOSUIDKey/@mode"/></c:set>
+            <iman:mooMode name="_ncifZCMOSUIDKey_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifZCMOSUIDKey = new UiObject();
+         <c:if test="${edasRights.target.ncifZCMOSUIDKey.writeable}">
+            addToNotificationList('ncifZCMOSUIDKey', 'uih_mvSelect');
+            addActionHandler('ncifZCMOSUIDKey', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	--%>

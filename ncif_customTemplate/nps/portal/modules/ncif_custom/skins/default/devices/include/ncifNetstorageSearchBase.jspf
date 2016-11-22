@@ -1,0 +1,40 @@
+<%--
+	<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifNetstorageSearchBase.jspf"  %>  
+--%>
+
+
+      <%-- ncifNetstorageSearchBase --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifNetstorageSearchBaseDisplayName}"/>:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifNetstorageSearchBase.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifNetstorageSearchBase" value="<c:out value="${eDir$target$ncifNetstorageSearchBase}" escapeXml="false"/>">
+            </c:if>
+            <INPUT type="text" name="_ncifNetstorageSearchBase" id="spinner_ncifNetstorageSearchBase" value="<x:out select="$edasXml/edas/ncifNetstorageSearchBase/value"/>" size=<iman:string key="UI.textboxSize"/> style="width:<iman:string key="UI.textboxPixel"/>"  <c:if test="${!edasRights.target.ncifNetstorageSearchBase.writeable}">DISABLED</c:if> >            <c:if test="${edasRights.target.ncifNetstorageSearchBase.writeable}">
+               <iman:os typeFilter="*" control="_ncifNetstorageSearchBase" />
+            </c:if>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifNetstorageSearchBase/@mode"/></c:set>
+            <iman:mooMode name="_ncifNetstorageSearchBase_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifNetstorageSearchBase = new UiObject();
+         <c:if test="${edasRights.target.ncifNetstorageSearchBase.writeable}">
+            addToNotificationList('ncifNetstorageSearchBase', 'uih_textfield');
+            addActionHandler('ncifNetstorageSearchBase', 'uiah_textfield');
+         </c:if>
+      </SCRIPT>
+      <SCRIPT>
+         window.uiObject_ncifNetstorageSearchBase.m_lowerBound = null;
+         window.uiObject_ncifNetstorageSearchBase.m_upperBound = null;
+         window.uiObject_ncifNetstorageSearchBase.m_type = "string";
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+

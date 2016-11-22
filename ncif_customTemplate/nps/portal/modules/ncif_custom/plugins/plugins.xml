@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugins>
+
+	<private-page>
+		<id>ncif_custom.ncif_custom_Configuration_OES_Settings</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_OES_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_OES_Settings</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>General OES Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter040.OES_Settings</id>
+			<display-name-key>chapter.OES_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifLDAPServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifReplicaServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifServerCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Device_Properties_General</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Device_Properties_General</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Device_Properties_General</display-name-key>
+		<object-type-name>Computer</object-type-name>
+		<object-type-name>ncifDevice</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>General Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter010.Device_Settings</id>
+			<display-name-key>chapter.Device_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifIPAddresses</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifMACAddresses</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifKeyBoard</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifServerStatus</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifLanguage</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifServerCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Configuration_Advanced_OES_Settings</id>
+		<page-order>399</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_Advanced_OES_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_Advanced_OES_Settings</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>Advanced OES Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter040.OES_Settings</id>
+			<display-name-key>chapter.OES_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifDHCPGroupCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDHCPLocatorCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDNSRootServerInfoCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifInstUser</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifLUMAdmGrp</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDNSGroupCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDNSLocatorCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifUCOCtx</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Configuration_Advanced_OES_LDAP_Settings</id>
+		<page-order>399</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_Advanced_OES_LDAP_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_Advanced_OES_LDAP_Settings</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>Advanced OES Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter040.OES_Settings</id>
+			<display-name-key>chapter.OES_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifAfpSearchBase</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCifsSearchBase</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifIprintSearchBase</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifNetstorageSearchBase</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSearchBase</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page> 
+		<id>ncif_custom.ncif_custom_Configuration_YaST_CA_Settings</id>
+		<page-order>399</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_YaST_CA_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_YaST_CA_Settings</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>YaST CA Settings</param-value>
+		</url-param>		
+		<chapter>
+			<id>chapter030.Global_Configuration</id>
+			<display-name-key>chapter.Global_Configuration</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>		
+		<rights-assignment>
+			<attribute-name>ncifCACn</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCACountry</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCAEmail</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCALocality</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCAName</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCAOrg</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCAOrgUnit</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCAPwd</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifCAState</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Device_Settings_Advanced</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Device_Settings_Advanced</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Device_Settings_Advanced</display-name-key>
+		<object-type-name>Computer</object-type-name>
+		<object-type-name>ncifDevice</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>Advanced Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter010.Device_Settings</id>
+			<display-name-key>chapter.Device_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifRootPwd</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMAgentBinary</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifPartFile</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDeviceTemplate</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSoftFile</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifHWClock</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifServerType</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDiskDevices</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifServiceType</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMKeys</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Device_Network_Settings</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Device_Network_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Device_Network_Settings</display-name-key>
+		<object-type-name>Computer</object-type-name>
+		<object-type-name>ncifDevice</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>Device Network Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter020.Network_Environment</id>
+			<display-name-key>chapter.Network_Environment</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<page-order>500</page-order>
+		<rights-assignment>
+			<attribute-name>ncifDNSServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDNSDomains</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDHCPInterfaces</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDefaultGateways</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Configuration_Network_Settings</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_Network_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_Network_Settings</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>General Network Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter020.Network_Environment</id>
+			<display-name-key>chapter.Network_Environment</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifDNSServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifLDAPServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDNSDomains</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifNTPServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSLPDAServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSLPScopes</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDefaultGateways</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSLPType</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Configuration_Update_Settings</id>
+		<page-order>399</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_Update_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_Update_Settings</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>System Update Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter030.Global_Configuration</id>
+			<display-name-key>chapter.Global_Configuration</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifSMTServer</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifIsoServer</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMAgentURL</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifUpdateSystem</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMAgentBinary</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSMTClientURL</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Linux_Device_Properties_General</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Linux_Device_Properties_General</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Linux_Device_Properties_General</display-name-key>
+		<object-type-name>Computer</object-type-name>
+		<object-type-name>ncifDevice</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>General Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter010.Device_Settings</id>
+			<display-name-key>chapter.Device_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>ncifIPAddresses</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifMACAddresses</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	<private-page>
+		<id>ncif_custom.ncif_custom_Configuration_Variables</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Configuration_Variables</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Configuration_Variables</display-name-key>
+		<object-type-name>Organizational Unit</object-type-name>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>@CUSTOMER.CAMEL@ Variables</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter050.ncif_custom_Settings</id>
+			<display-name-key>chapter.ncif_custom_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>@CUSTOMER.ATTR.PREFIX.NCIF@InstServers</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+	
+	<private-page>
+		<id>ncif_custom.ncif_custom_Device_Settings</id>
+		<page-order>299</page-order>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<created-by>oesinstall</created-by>
+		<class-name>com.novell.emframe.dev.DirPropertyBookPage</class-name>
+		<merge-template>ncif_custom.ncif_custom_Device_Settings</merge-template>
+		<description />
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>page.ncif_custom_Device_Settings</display-name-key>
+		<object-type-name>Computer</object-type-name>
+		<url-param>
+			<param-key>defaultDisplayName</param-key>
+			<param-value>@CUSTOMER.CAMEL@ Device Settings</param-value>
+		</url-param>
+		<chapter>
+			<id>chapter060.ncif_custom_Device_Settings</id>
+			<display-name-key>chapter.ncif_custom_Device_Settings</display-name-key>
+			<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		</chapter>
+		<rights-assignment>
+			<attribute-name>@CUSTOMER.ATTR.PREFIX.NCIF@TestPC</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<moo-enabled>true</moo-enabled>
+	</private-page>
+
+</plugins>

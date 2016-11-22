@@ -1,0 +1,10 @@
+<project name="noname" default="help" basedir=".">
+
+  <property file="build.properties"/>
+  <property file="C:/CVS_Base/iManager/ant/common.properties"/>
+
+  <property name="common.deprecation" value="on"/>
+
+  <import file="${common.ant}"/>
+
+</project>

@@ -1,0 +1,33 @@
+      <%-- @CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess --%>
+      <TR>
+         <TD align="left" colspan="2">
+            @CUSTOMER.CAMEL@ Internet Access Selection:<%= ncif_mandatory %>&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess.writeable}">
+               <INPUT type="hidden" name="eDir$target$@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess" value="<c:out value="${eDir$target$@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess = null; </SCRIPT>
+            <SELECT name="_@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess" id="_@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+				<%= getSelectOptionsFromList( request, ncsCommon.getTree().getOe(), "@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess", "@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess" ) %>
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess/@mode"/></c:set>
+            <iman:mooMode name="_@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess = new UiObject();
+         <c:if test="${edasRights.target.@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess.writeable}">
+            addToNotificationList('@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess', 'uih_mvSelect');
+            addActionHandler('@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>
+	

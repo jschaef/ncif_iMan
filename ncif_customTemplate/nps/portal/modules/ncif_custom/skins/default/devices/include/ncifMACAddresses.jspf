@@ -1,0 +1,36 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifMACAddresses.jspf"  %>  
+	--%>
+	
+   <%-- ncifMACAddresses --%>
+   <TR>
+      <TD align="left" colspan="2">
+         MAC Address (i.e. 00:0c:29:e1:da:ce):<%= ncif_mandatory %>&nbsp;&nbsp;
+      </TD>
+   </TR>
+   <TR>
+      <TD>
+         <c:if test="${edasRights.target.ncifMACAddresses.writeable}">
+            <INPUT type="hidden" name="eDir$target$ncifMACAddresses" value="<c:out value="${eDir$target$ncifMACAddresses}" escapeXml="false"/>">
+         </c:if>
+         <x:set var="MVStringEditor_xmlNodeSet" select="$edasXml/edas/ncifMACAddresses" scope="request"/>
+         <iman:mved maxLength="64512" 
+						  regExpression="^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$" 
+						  regExpressionMsg="Please provide a valid MAC Address (i.e. 00:0c:29:e1:da:ce)"         
+						  readonly="${!edasRights.target.ncifMACAddresses.writeable}" enforceUnique="true" ignoreCase="true" minLength="0" name="_ncifMACAddresses" 
+						  />
+      </TD>
+      <TD valign="top">
+         <c:set var="mode"><x:out select="$edasXml/edas/ncifMACAddresses/@mode"/></c:set>
+         <iman:mooMode name="_ncifMACAddresses_mode" value="${mode}" multi="true" />
+      </TD>
+   </TR>
+   <SCRIPT>
+      window.uiObject_ncifMACAddresses = new UiObject();
+      <c:if test="${edasRights.target.ncifMACAddresses.writeable}">
+         addToNotificationList('ncifMACAddresses', 'uih_mvStringEditor');
+      </c:if>
+   </SCRIPT>
+   <TR><TD height="9"></TD></TR>
+
+   <%	ncif_mandatory			=	""; // reset  %>

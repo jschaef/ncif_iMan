@@ -1,0 +1,56 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifTimeZone.jspf"  %>  
+	
+	         onMVSelectChange("ncifTimeZone", document.getElementById("_ncifTimeZone"));
+
+	--%>
+
+
+      <%-- ncifTimeZone --%>
+      <TR>
+         <TD align="left" colspan="2">
+            Time Zone Selection:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifTimeZone.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifTimeZone" value="<c:out value="${eDir$target$ncifTimeZone}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifTimeZone = null; </SCRIPT>
+				<SELECT name="_ncifTimeZone" id="_ncifTimeZone" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifTimeZone', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+ <%--
+            <c:set var="testValue" value="Europe/Berlin"/>
+               <OPTION value="Europe/Berlin" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/Berlin
+            <c:set var="testValue" value="Europe/Brussels"/>
+               <OPTION value="Europe/Brussels" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/Brussels
+            <c:set var="testValue" value="Europe/Paris"/>
+               <OPTION value="Europe/Paris" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/Paris
+            <c:set var="testValue" value="Europe/Prague"/>
+               <OPTION value="Europe/Prague" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/Prague
+            <c:set var="testValue" value="Europe/London"/>
+               <OPTION value="Europe/London" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/London
+            <c:set var="testValue" value="Europe/Madrid"/>
+               <OPTION value="Europe/Madrid" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/Madrid
+            <c:set var="testValue" value="Europe/Warsaw"/>
+               <OPTION value="Europe/Warsaw" <x:if select="count($edasXml/edas/ncifTimeZone/value[text()=$testValue])">selected</x:if>>Europe/Warsaw
+--%>
+				<%= getSelectOptionsFromList( request, ncsCommon.getTree().getOe(), "ncifTimeZone", "ncifTimeZone" ) %>
+
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifTimeZone/@mode"/></c:set>
+            <iman:mooMode name="_ncifTimeZone_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifTimeZone = new UiObject();
+         <c:if test="${edasRights.target.ncifTimeZone.writeable}">
+            addToNotificationList('ncifTimeZone', 'uih_mvSelect');
+            addActionHandler('ncifTimeZone', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+

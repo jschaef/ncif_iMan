@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<install>
+
+  <notes>
+      role names not too long - otherwise install error "ATTRIBUTE"
+  </notes>
+
+
+  <module>
+    <id>ncsEMEA</id>
+    <version>@TIMESTAMP@</version>
+    <required-version>@IMANAGERMINVERSION@</required-version>
+    <expired-version>@IMANAGERMAXVERSION@</expired-version>
+    <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+    <display-name-key>ncsEMEA_displayName</display-name-key>
+    <description-key>ncsEMEA_description</description-key>
+  </module>
+  
+  
+  <category> 
+    <id>ncsEMEA_category</id>
+    <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+    <display-name-key>ncsEMEA_category</display-name-key>
+    <description-key>ncsEMEA_category</description-key>
+  </category>
+  
+  <role>
+    <id>ncsEMEA_roles_test</id>
+    <version>1.2</version>
+    <required-version>2.0</required-version>
+    <order>999</order>
+    <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+    <display-name-key>ncsEMEA_roles_test</display-name-key>
+    <category-assignment>Administration</category-assignment>
+    <role-category-assignment>ncsEMEA_category</role-category-assignment>
+  </role>
+  
+  <task>
+    <id>task_pwdSelfSvc</id>
+    <version>2.0.0</version>
+    <required-version>2.0.0</required-version>
+    <class-name>com.novell.emframe.dev.EmptyTask</class-name>
+    <merge-template>ncsEMEA.task_ncsSelfServicePwd</merge-template> 
+    <display-name-key>task_pwdSelfSvc</display-name-key>
+    <description-key>task_pwdSelfSvc</description-key>
+    <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+    <url-param>
+      <param-key>resource-properties-file</param-key>
+      <param-value>com.novell.ncsEMEA.resources</param-value>
+    </url-param>
+  </task>
+  
+  
+  <inactive>
+    
+    <task>
+      <id>ncsEMEA_task_ChangePassword</id>
+      <order>99</order>
+      <version>2.0.0</version>
+      <required-version>2.0.0</required-version>
+      <class-name>java:com.novell.ncsEMEA.gadgets.task_ChangePassword</class-name>
+      <display-name-key>ncsEMEA_task_ChangePassword</display-name-key>
+      <description-key>ncsEMEA_task_ChangePassword</description-key>
+      <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>netscape</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+      <role-assignment>ncsEMEA_roles_test</role-assignment>
+      <rights-assignment>
+        <attribute-name>Password Management</attribute-name>
+        <privilege>Supervisor</privilege>
+      </rights-assignment>
+      <url-param>
+        <param-key>selfService</param-key>
+        <param-value>true</param-value>
+      </url-param>
+    </task>
+    
+  </inactive>
+  
+</install>

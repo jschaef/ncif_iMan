@@ -1,0 +1,32 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifZCMServers.jspf"  %>  
+	--%>
+
+      <%-- ncifZCMServers --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifZCMServersDisplayName}"/>:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifZCMServers.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifZCMServers" value="<c:out value="${eDir$target$ncifZCMServers}" escapeXml="false"/>">
+            </c:if>
+            <x:set var="MVStringEditor_xmlNodeSet" select="$edasXml/edas/ncifZCMServers" scope="request"/>
+            <iman:mved maxLength="64512" readonly="${!edasRights.target.ncifZCMServers.writeable}" enforceUnique="true" ignoreCase="true" minLength="0" name="_ncifZCMServers"            />
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifZCMServers/@mode"/></c:set>
+            <iman:mooMode name="_ncifZCMServers_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifZCMServers = new UiObject();
+         <c:if test="${edasRights.target.ncifZCMServers.writeable}">
+            addToNotificationList('ncifZCMServers', 'uih_mvStringEditor');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+

@@ -1,0 +1,119 @@
+# objectclasses 3
+
+# attributes 8
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@instservers-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.NCIF@InstServers'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} X-NDS_UPPER_BOUND '64512' )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@servertype-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.NCIF@ServerType' 
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} X-NDS_UPPER_BOUND '64512' )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@testpc-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.NCIF@TestPC'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@location-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.ATTR@Location'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} SINGLE-VALUE )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@company-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.ATTR@Company'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} SINGLE-VALUE )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@country-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.ATTR@Country'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} SINGLE-VALUE )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@slesersion-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.NCIF@SLESVersion'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} SINGLE-VALUE )
+
+dn: cn=schema
+changetype: modify
+add: attributeTypes
+attributeTypes: ( @CUSTOMER.ATTR.PREFIX.OID@internetaccess-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64512} )
+
+
+
+dn: cn=schema
+changetype: modify
+add: objectClasses
+objectClasses: ( @CUSTOMER.ATTR.PREFIX.NCIF@configuration-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.NCIF@Configuration'
+  AUXILIARY MAY
+  @CUSTOMER.ATTR.PREFIX.NCIF@InstServers
+  X-NDS_NOT_CONTAINER '1' )
+
+dn: cn=schema
+changetype: modify
+add: objectClasses
+objectClasses: ( @CUSTOMER.ATTR.PREFIX.NCIF@device-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.NCIF@Device'
+  AUXILIARY MAY
+  ( @CUSTOMER.ATTR.PREFIX.NCIF@TestPC
+  $ @CUSTOMER.ATTR.PREFIX.NCIF@ServerType )
+  X-NDS_NOT_CONTAINER '1' )
+
+dn: cn=schema
+changetype: modify
+add: objectClasses
+objectClasses: ( @CUSTOMER.ATTR.PREFIX.CLASS@user-oid
+  NAME '@CUSTOMER.ATTR.PREFIX.CLASS@User'
+  AUXILIARY MAY
+  ( @CUSTOMER.ATTR.PREFIX.ATTR@Country
+  $ @CUSTOMER.ATTR.PREFIX.ATTR@Location
+  $ @CUSTOMER.ATTR.PREFIX.ATTR@Company
+  $ @CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess )
+  X-NDS_NOT_CONTAINER '1' )
+
+
+
+dn: o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: organization
+objectClass: ndsLoginProperties
+objectClass: top
+objectClass: ndsContainerLoginProperties
+o: @CUSTOMER.LOWER@
+
+dn: ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: organizationalUnit
+objectClass: ndsLoginProperties
+objectClass: top
+objectClass: ndsContainerLoginProperties
+ou: global
+
+dn: ou=ncif-configuration,ou=global,o=@CUSTOMER.ORGNAME@
+changetype: add
+objectClass: organizationalUnit
+objectClass: ndsLoginProperties
+objectClass: top
+objectClass: ndsContainerLoginProperties
+ou: ncif-configuration
+
+

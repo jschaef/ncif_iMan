@@ -1,0 +1,89 @@
+<dir-translator>
+    <resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+	
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.ATTR@Company</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.ATTR@Country</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.ATTR@InternetAccess</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.ATTR@Location</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.NCIF@InstServers</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.NCIF@ServerType</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.NCIF@SLESVersion</attribute-name>
+    <attribute-name>@CUSTOMER.ATTR.PREFIX.NCIF@TestPC</attribute-name>
+	 
+    <attribute-name>dialupAccess</attribute-name>
+    <attribute-name>ncifAfpSearchBase</attribute-name>
+    <attribute-name>ncifCACn</attribute-name>
+    <attribute-name>ncifCACountry</attribute-name>
+    <attribute-name>ncifCAEmail</attribute-name>
+    <attribute-name>ncifCALocality</attribute-name>
+    <attribute-name>ncifCAName</attribute-name>
+    <attribute-name>ncifCAOrg</attribute-name>
+    <attribute-name>ncifCAOrgUnit</attribute-name>
+    <attribute-name>ncifCAPwd</attribute-name>
+    <attribute-name>ncifCAState</attribute-name>
+    <attribute-name>ncifCifsSearchBase</attribute-name>
+    <attribute-name>ncifDefaultGateways</attribute-name>
+    <attribute-name>ncifDeviceTemplate</attribute-name>
+    <attribute-name>ncifDHCPGroupCtx</attribute-name>
+    <attribute-name>ncifDHCPInterfaces</attribute-name>
+    <attribute-name>ncifDHCPLocatorCtx</attribute-name>
+    <attribute-name>ncifDiskDevices</attribute-name>
+    <attribute-name>ncifDNSDomains</attribute-name>
+    <attribute-name>ncifDNSGroupCtx</attribute-name>
+    <attribute-name>ncifDNSLocatorCtx</attribute-name>
+    <attribute-name>ncifDNSRootServerInfoCtx</attribute-name>
+    <attribute-name>ncifDNSServers</attribute-name>
+    <attribute-name>ncifGlobalConfigurationCtx</attribute-name>
+    <attribute-name>ncifHostName</attribute-name>
+    <attribute-name>ncifHWClock</attribute-name>
+    <attribute-name>ncifInstUser</attribute-name>
+    <attribute-name>ncifIPAddresses</attribute-name>
+    <attribute-name>ncifIprintSearchBase</attribute-name>
+    <attribute-name>ncifKeyBoard</attribute-name>
+    <attribute-name>ncifLanguage</attribute-name>
+    <attribute-name>ncifLDAPServers</attribute-name>
+    <attribute-name>ncifLUMAdmGrp</attribute-name>
+    <attribute-name>ncifMACAddresses</attribute-name>
+    <attribute-name>ncifNetstorageSearchBase</attribute-name>
+    <attribute-name>ncifNTPServers</attribute-name>
+    <attribute-name>ncifPartFile</attribute-name>
+    <attribute-name>ncifReplicaServers</attribute-name>
+    <attribute-name>ncifRootPwd</attribute-name>
+    <attribute-name>ncifSearchBase</attribute-name>
+    <attribute-name>ncifServerCtx</attribute-name>
+    <attribute-name>ncifServerStatus</attribute-name>
+    <attribute-name>ncifServerType</attribute-name>
+    <attribute-name>ncifServiceType</attribute-name>
+    <attribute-name>ncifSLPDAServers</attribute-name>
+    <attribute-name>ncifSLPScopes</attribute-name>
+    <attribute-name>ncifSLPType</attribute-name>
+    <attribute-name>ncifSMTClientURL</attribute-name>
+    <attribute-name>ncifSMTServer</attribute-name>
+    <attribute-name>ncifSoftFile</attribute-name>
+    <attribute-name>ncifTimeZone</attribute-name>
+    <attribute-name>ncifUCOCtx</attribute-name>
+    <attribute-name>ncifUpdateSystem</attribute-name>
+    <attribute-name>ncifXMLSnippets</attribute-name>
+    <attribute-name>ncifZCMAgentBinary</attribute-name>
+    <attribute-name>ncifZCMAgentURL</attribute-name>
+    <attribute-name>ncifZCMKeys</attribute-name>
+    <attribute-name>ncifZCMLanguageUIDKey</attribute-name>
+    <attribute-name>ncifZCMMSOfficeUIDKey</attribute-name>
+    <attribute-name>ncifZCMOSUIDKey</attribute-name>
+    <attribute-name>ncifZCMRsyncBandwidthLimit</attribute-name>
+    <attribute-name>ncifZCMServers</attribute-name>
+	 
+    <object-type-name>@CUSTOMER.ATTR.PREFIX.CLASS@User</object-type-name>
+    <object-type-name>@CUSTOMER.ATTR.PREFIX.NCIF@Configuration</object-type-name>
+    <object-type-name>@CUSTOMER.ATTR.PREFIX.NCIF@Device</object-type-name>
+	 
+    <object-type-name>AFP_Server</object-type-name>
+    <object-type-name>ncifConfiguration</object-type-name>
+    <object-type-name>ncifDevice</object-type-name>
+    <object-type-name>ncifDeviceTemplate</object-type-name>
+    <object-type-name>ncifServiceType</object-type-name>
+    <object-type-name>ncifZCMConfiguration</object-type-name>
+    <object-type-name>radiusprofile</object-type-name>
+	 
+</dir-translator>
+

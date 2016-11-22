@@ -1,0 +1,20 @@
+
+.css_data_th0 { color: black; background-color: #BBBBBB; margin-top: 16px; margin-bottom: 6px; padding: 10px; font-weight: bold; font-size: 12pt; vertical-align:bottom; }
+.css_data_th1 { color: black; background-color: #BBBBBB; margin-top: 6px; margin-bottom: 4px; padding: 5px; font-weight: bold; font-size: 12pt; vertical-align:bottom;  }
+.css_data_th2 { color: black; background-color: #F0F0F0; margin-top: 4px; margin-bottom: 2px; padding: 3px;  }
+.css_data_tr1 { color: black; background-color: #F0F0F0 }
+.css_data_tr1a{ color: black; background-color: #E8E8E8 }
+.css_data_tr2 { color: black; }
+.css_data_td2 { color: black; background-color: #E0E0E0; margin-top: 4px; margin-bottom: 1px; padding: 1px;  }
+.css_data_td2a { }
+.css_data_table { color: black; empty-cells: show; margin: 0pt }
+.css_data_report { color: black; }
+.css_data_tdIndent { background-color: #FFFFFF; width: 14px;   }
+.css_data_trEmpty { background-color: #FFFFFF; margin-top: 8px; margin-bottom: 8px; padding: 1px;  }
+.css_data_info { color: #EAEAEA; background-color: #777777; margin-top: 16px; margin-bottom: 16px; padding: 5px; font-weight: bold; font-size: 12pt; letter-spacing: 1pt }
+.css_line_sep_h1 { background-color: #FFFFFF; border: 0px solid #FFFFFF; height: 14px; empty-cells: show; }
+.css_line_sep_h2 { background-color: #FFFFFF; border: 0px solid #FFFFFF; height: 5px; empty-cells: show; }
+.css_line_sep_r1 { background-color: #FFFFFF; border: 0px solid #FFFFFF; height: 4px; empty-cells: show;}
+.css_line_sep_r2 { background-color: #FFFFFF; border: 0px solid #FFFFFF; height: 0px; empty-cells: show; }
+.css_page_sep    { background-color: #FFFFFF; border: 0px solid #FFFFFF; height: 50px; page-break-after: always }
+

@@ -1,0 +1,36 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifCACountry.jspf"  %>  
+	--%>
+
+      <%-- ncifCACountry --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifCACountryDisplayName}"/>:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifCACountry.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifCACountry" value="<c:out value="${eDir$target$ncifCACountry}" escapeXml="false"/>">
+            </c:if>
+            <INPUT type="text" name="_ncifCACountry" id="spinner_ncifCACountry" value="<x:out select="$edasXml/edas/ncifCACountry/value"/>" size=60  maxlength=64512 onchange='return validateLengthField(this, 0, 64512); postUiHandlerEvent("ncifCACountry", "change")'<c:if test="${!edasRights.target.ncifCACountry.writeable}">DISABLED</c:if> >
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifCACountry/@mode"/></c:set>
+            <iman:mooMode name="_ncifCACountry_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifCACountry = new UiObject();
+         <c:if test="${edasRights.target.ncifCACountry.writeable}">
+            addToNotificationList('ncifCACountry', 'uih_textfield');
+            addActionHandler('ncifCACountry', 'uiah_textfield');
+         </c:if>
+      </SCRIPT>
+      <SCRIPT>
+         window.uiObject_ncifCACountry.m_lowerBound = 0;
+         window.uiObject_ncifCACountry.m_upperBound = 64512;
+         window.uiObject_ncifCACountry.m_type = "string";
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+

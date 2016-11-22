@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+        <file>
+            <url>nps/portal/modules/ncif_custom/install/install.xml</url>
+            <bookmark id="2">
+                <name/>
+                <line>268</line>
+                <key/>
+            </bookmark>
+            <bookmark id="1">
+                <name/>
+                <line>422</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>nps/portal/modules/ncif_custom/plugins/plugins.xml</url>
+            <bookmark id="3">
+                <name/>
+                <line>251</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="IDM SOAP/REST">
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/customer.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/deliverables/ncif_common.ldif</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/ant/clone.properties</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/plugins/plugins.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/WEB-INF/classes/com/novell/ncif_custom/resources.properties</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/default/ncif_custom_Configuration_Update_Settings.jsp</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/default/ncif_custom_Organizational_Unit_Modification.jsp</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/install.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/deliverables/ncif_custom.ldif</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/include/ncif_custom_dialupAccess.jspf</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/plugins/names.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/plugins/shared_tasks.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/ant/clone.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/zcm.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/default/ncif_custom_User_Settings.jsp</file>
+        </group>
+        <group name="IDM Continental">
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/customer.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/deliverables/ncif_common.ldif</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/ant/clone.properties</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/plugins/plugins.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/WEB-INF/classes/com/novell/ncif_custom/resources.properties</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/default/ncif_custom_Configuration_Update_Settings.jsp</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/default/ncif_custom_Organizational_Unit_Modification.jsp</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/install.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/deliverables/ncif_custom.ldif</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/include/ncif_custom_dialupAccess.jspf</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/plugins/names.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/plugins/shared_tasks.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/ant/clone.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/zcm.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/skins/default/devices/default/ncif_custom_User_Settings.jsp</file>
+        </group>
+        <group name="iManager">
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/customer.xml</file>
+            <file>file:/C:/CVS_Base/iManager/ncif/ncif_components/ncif_customTemplate/nps/portal/modules/ncif_custom/install/install.xml</file>
+        </group>
+    </open-files>
+</project-private>

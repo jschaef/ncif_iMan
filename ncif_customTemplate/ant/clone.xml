@@ -1,0 +1,167 @@
+<project name="clone" default="clone" basedir=".">
+
+	<property file="clone.properties"/>
+	<property file="/home/jschaef/git/ncif/custom/common.properties"/>
+
+	<property name="common.deprecation" value="on"/>
+	<import file="${common.ant}"/>
+
+	<patternset id="iMgrAll">
+		<include name="**/*"/>
+		
+		<exclude name="ant/*.*"/>
+		<exclude name="nbproject/*.*"/>
+		<exclude name="temp/*.*"/>
+		<exclude name="**/CUSTOMER*.*"/>
+	</patternset>
+
+	<patternset id="iMgrTokenized">
+		<include name="**/*.xml"/>
+		<include name="**/*.properties"/>
+		<include name="**/*.jsp"/>
+		<include name="**/*.jspf"/>
+		<include name="**/*.ldif"/>
+		<include name="**/*.MF"/>
+		
+		<exclude name="ant/clone.*"/>
+		<exclude name="nbproject/private/*.*"/>
+		<exclude name="nbproject/project.*"/>
+	</patternset>
+  
+	<target name="copyAll">
+		<echo>
+         Create 
+         	${template.target.path}
+         Copy
+         	${template.source.base}   -->  ${template.target.path}
+		</echo>	
+			
+		<mkdir dir="${template.target.path}" />
+		
+		<!-- copy all -->
+		<copy todir="${template.target.path}" verbose="false" overwrite="false" >
+			<fileset dir="${template.source.base}" casesensitive="No">
+				<patternset refid="iMgrAll"/>
+			</fileset>
+		</copy>
+	</target>  
+    
+	<target name="copyTokenized" depends="init">
+		<echo>
+        Tokenize
+            ${template.source.base}   -->  ${template.target.path}
+
+            CUSTOMER.LOWER=${CUSTOMER.LOWER}
+            CUSTOMER.UPPER=${CUSTOMER.UPPER}
+            CUSTOMER.CAMEL=${CUSTOMER.CAMEL}
+            CUSTOMER.DISPLAY=${CUSTOMER.DISPLAY}
+            CUSTOMER.ORGNAME=${CUSTOMER.ORGNAME}
+
+            CUSTOMER.ATTR.PREFIX.OID=${CUSTOMER.ATTR.PREFIX.OID}
+            CUSTOMER.ATTR.PREFIX.NCIF=${CUSTOMER.ATTR.PREFIX.NCIF}
+                -> e.g., ${CUSTOMER.ATTR.PREFIX.NCIF}InstServers, ${CUSTOMER.ATTR.PREFIX.NCIF}ServerType, ${CUSTOMER.ATTR.PREFIX.NCIF}SLESVersion
+           CUSTOMER.ATTR.PREFIX.ATTR=${CUSTOMER.ATTR.PREFIX.ATTR}
+                -> e.g., ${CUSTOMER.ATTR.PREFIX.ATTR}Company, ${CUSTOMER.ATTR.PREFIX.ATTR}Country, ${CUSTOMER.ATTR.PREFIX.ATTR}InternetAccess
+            CUSTOMER.ATTR.PREFIX.CLASS=${CUSTOMER.ATTR.PREFIX.CLASS}
+                -> e.g., ${CUSTOMER.ATTR.PREFIX.CLASS}User, ${CUSTOMER.ATTR.PREFIX.CLASS}Configuration, ${CUSTOMER.ATTR.PREFIX.CLASS}Device
+ 			
+            See also ${template.target.path}/deliverables/*.ldif
+		</echo>	
+
+		<!-- overwrite with replace tokens -->
+		<copy todir="${template.target.path}" verbose="false" overwrite="true">
+			<fileset dir="${template.source.base}" casesensitive="No">
+				<patternset refid="iMgrTokenized"/>
+			</fileset>
+			<filterset>
+				<filter token="CUSTOMER.LOWER"					value="${CUSTOMER.LOWER}"/>
+				<filter token="CUSTOMER.UPPER"					value="${CUSTOMER.UPPER}"/>
+				<filter token="CUSTOMER.CAMEL"					value="${CUSTOMER.CAMEL}"/>
+				<filter token="CUSTOMER.DISPLAY"					value="${CUSTOMER.DISPLAY}"/>
+				<filter token="CUSTOMER.ORGNAME"					value="${CUSTOMER.ORGNAME}"/>
+				<filter token="CUSTOMER_ENV.UPPER"		value="${CUSTOMER_ENV.UPPER}"/>
+				
+				<filter token="CUSTOMER.ATTR.PREFIX.OID"		value="${CUSTOMER.ATTR.PREFIX.OID}"/>
+				<filter token="CUSTOMER.ATTR.PREFIX.NCIF"		value="${CUSTOMER.ATTR.PREFIX.NCIF}"/>
+				<filter token="CUSTOMER.ATTR.PREFIX.ATTR"		value="${CUSTOMER.ATTR.PREFIX.ATTR}"/>
+				<filter token="CUSTOMER.ATTR.PREFIX.CLASS"	value="${CUSTOMER.ATTR.PREFIX.CLASS}"/>
+				<filter token="NCIF_VERSION"				value="${MFVER}"/>
+				<filter token="NCIF-DESCRIPTION" 			value="Novell Consulting Installation Framework (${CUSTOMER.DISPLAY} ${CUSTOMER_ENV.UPPER})"/>
+				<filter token="TIMESTAMP" 			value="${XMLVER}"/>
+			</filterset>
+		</copy>
+	</target>  
+  
+	<target name="copyProjectXml" depends="init">
+		<!-- overwrite with replace tokens -->
+		<copy tofile="${template.target.path}/nbproject/project.xml" file="${template.source.base}/nbproject/custom.xml" verbose="false" overwrite="true">
+			<filterset>
+				<filter token="CUSTOMER.LOWER"					value="${CUSTOMER.LOWER}"/>
+				<filter token="CUSTOMER.UPPER"					value="${CUSTOMER.UPPER}"/>
+				<filter token="CUSTOMER.CAMEL"					value="${CUSTOMER.CAMEL}"/>
+				<filter token="CUSTOMER.DISPLAY"					value="${CUSTOMER.DISPLAY}"/>
+				<filter token="CUSTOMER.ORGNAME"					value="${CUSTOMER.ORGNAME}"/>
+				
+				<filter token="CUSTOMER.ATTR.PREFIX.OID"		value="${CUSTOMER.ATTR.PREFIX.OID}"/>
+				<filter token="CUSTOMER.ATTR.PREFIX.NCIF"		value="${CUSTOMER.ATTR.PREFIX.NCIF}"/>
+				<filter token="CUSTOMER.ATTR.PREFIX.ATTR"		value="${CUSTOMER.ATTR.PREFIX.ATTR}"/>
+				<filter token="CUSTOMER.ATTR.PREFIX.CLASS"	value="${CUSTOMER.ATTR.PREFIX.CLASS}"/>
+			</filterset>
+		</copy>
+	</target>  
+  
+	<target name="copyGif">
+		<echo>
+          Copy GIFs
+         	${template.source.base}   -->  ${template.target.path}
+		</echo>	
+		
+		<!-- copy all -->
+		<copy		file="${template.source.base}/nps/portal/modules/dev/images/dir/CUSTOMER.ATTR.PREFIX.NCIFConfiguration.gif" 
+				 tofile="${template.target.path}/nps/portal/modules/dev/images/dir/${CUSTOMER.ATTR.PREFIX.NCIF}Configuration.gif"		verbose="true"	/>
+		<copy		file="${template.source.base}/nps/portal/modules/dev/images/dir/CUSTOMER.ATTR.PREFIX.NCIFDevice.gif" 
+				 tofile="${template.target.path}/nps/portal/modules/dev/images/dir/${CUSTOMER.ATTR.PREFIX.NCIF}Device.gif"				verbose="true"	/>
+	</target>  
+  
+
+	
+	<target name="exclude_zcm" unless="exclude.zcm" >
+		<echo>
+			DELETE ${template.target.path}/nps/portal/modules/ncif_custom/install/zcm.xml
+		</echo>
+		<delete file="${template.target.path}/nps/portal/modules/ncif_custom/install/zcm.xml" />
+	</target>
+	
+	<target name="exclude_custom" unless="exclude.custom" >
+		<echo>
+			DELETE ${template.target.path}/nps/portal/modules/ncif_custom/install/customer.xml
+		</echo>
+		<delete file="${template.target.path}/nps/portal/modules/ncif_custom/install/customer.xml" />
+	</target>
+	
+	
+	<target name="clone" depends="init,copyAll,copyTokenized,copyGif,copyProjectXml">
+		<input
+			message="Include ZCM tasks (y/n)?"
+			validargs="y,n"
+			addproperty="input.zcm"
+		/>
+		<condition property="exclude.zcm">
+			<equals arg1="y" arg2="${input.zcm}"/>
+		</condition>
+		
+		<input
+			message="Include Customer specific tasks (y/n)?"
+			validargs="y,n"
+			addproperty="input.custom"
+		/>
+		<condition property="exclude.custom">
+			<equals arg1="y" arg2="${input.custom}"/>
+		</condition>
+		<antcall target="exclude_zcm" />
+		<antcall target="exclude_custom" />
+	</target>
+  
+	
+	  
+</project>

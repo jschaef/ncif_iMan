@@ -1,0 +1,105 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifZCMLanguageUIDKey.jspf"  %>  
+	--%>
+	
+      <%-- ncifZCMLanguageUIDKey --%>
+      <TR>
+         <TD align="left" colspan="2">
+            ZCM Windows Installation Language Code<br> (see ISO 3166):&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+				<c:if test="${edasRights.target.ncifZCMLanguageUIDKey.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifZCMLanguageUIDKey" value="<c:out value="${eDir$target$ncifZCMLanguageUIDKey}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifZCMLanguageUIDKey = null; </SCRIPT>
+            <SELECT name="_ncifZCMLanguageUIDKey" id="_ncifZCMLanguageUIDKey" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifZCMLanguageUIDKey', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+					<%= getSelectOptionsFromList( request, ncsCommon.getTree().getOe(), "ncifZCMLanguageUIDKey", "ncifZCMLanguageUIDKey" ) %>
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifZCMLanguageUIDKey/@mode"/></c:set>
+            <iman:mooMode name="_ncifZCMLanguageUIDKey_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifZCMLanguageUIDKey = new UiObject();
+         <c:if test="${edasRights.target.ncifZCMLanguageUIDKey.writeable}">
+            addToNotificationList('ncifZCMLanguageUIDKey', 'uih_mvSelect');
+            addActionHandler('ncifZCMLanguageUIDKey', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>
+
+	
+	<%--
+	      <TR>
+         <TD align="left" colspan="2">
+            ZCM Windows Installation Language Code<br> (see ISO 3166):&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifZCMLanguageUIDKey.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifZCMLanguageUIDKey" value="<c:out value="${eDir$target$ncifZCMLanguageUIDKey}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifZCMLanguageUIDKey = null; </SCRIPT>
+            <SELECT name="_ncifZCMLanguageUIDKey" id="_ncifZCMLanguageUIDKey" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifZCMLanguageUIDKey', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+            <c:set var="testValue" value="CS_CZ"/>
+               <OPTION value="CS_CZ" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>CS_CZ
+            <c:set var="testValue" value="DA_DK"/>
+               <OPTION value="DA_DK" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>DA_DK
+            <c:set var="testValue" value="DE_AT"/>
+               <OPTION value="DE_AT" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>DE_AT
+            <c:set var="testValue" value="DE_DE"/>
+               <OPTION value="DE_DE" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>DE_DE
+            <c:set var="testValue" value="EN_GB"/>
+               <OPTION value="EN_GB" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>EN_GB
+            <c:set var="testValue" value="EN_IE"/>
+               <OPTION value="EN_IE" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>EN_IE
+            <c:set var="testValue" value="EN_US"/>
+               <OPTION value="EN_US" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>EN_US
+            <c:set var="testValue" value="ES_ES"/>
+               <OPTION value="ES_ES" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>ES_ES
+            <c:set var="testValue" value="FI_FI"/>
+               <OPTION value="FI_FI" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>FI_FI
+            <c:set var="testValue" value="FR_FR"/>
+               <OPTION value="FR_FR" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>FR_FR
+            <c:set var="testValue" value="HR_HR"/>
+               <OPTION value="HR_HR" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>HR_HR
+            <c:set var="testValue" value="HU_HU"/>
+               <OPTION value="HU_HU" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>HU_HU
+            <c:set var="testValue" value="IT_IT"/>
+               <OPTION value="IT_IT" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>IT_IT
+            <c:set var="testValue" value="NL_NL"/>
+               <OPTION value="NL_NL" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>NL_NL
+            <c:set var="testValue" value="PL_PL"/>
+               <OPTION value="PL_PL" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>PL_PL
+            <c:set var="testValue" value="PT_PT"/>
+               <OPTION value="PT_PT" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>PT_PT
+            <c:set var="testValue" value="RO_RO"/>
+               <OPTION value="RO_RO" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>RO_RO
+            <c:set var="testValue" value="SK_SK"/>
+               <OPTION value="SK_SK" <x:if select="count($edasXml/edas/ncifZCMLanguageUIDKey/value[text()=$testValue])">selected</x:if>>SK_SK
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifZCMLanguageUIDKey/@mode"/></c:set>
+            <iman:mooMode name="_ncifZCMLanguageUIDKey_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifZCMLanguageUIDKey = new UiObject();
+         <c:if test="${edasRights.target.ncifZCMLanguageUIDKey.writeable}">
+            addToNotificationList('ncifZCMLanguageUIDKey', 'uih_mvSelect');
+            addActionHandler('ncifZCMLanguageUIDKey', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	--%>

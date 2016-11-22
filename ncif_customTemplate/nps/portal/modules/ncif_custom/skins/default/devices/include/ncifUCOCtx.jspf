@@ -1,0 +1,39 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifUCOCtx.jspf"  %>  
+	--%>
+	
+      <%-- ncifUCOCtx --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifUCOCtxDisplayName}"/>:<%= ncif_mandatory %>&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+        <TD>
+            <c:if test="${edasRights.target.ncifUCOCtx.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifUCOCtx" value="<c:out value="${eDir$target$ncifUCOCtx}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_ncifUCOCtx = null; </SCRIPT>
+            <SELECT name="_ncifUCOCtx" id="_ncifUCOCtx" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('ncifUCOCtx', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+						<%= 	getSelectOptionsFromScan_Parent( request, ncsCommon.getTree().getOe(), o_base, "uamPosixConfig", true, "DN", "ncifUCOCtx" ) %>
+				
+            </SELECT>
+				
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifUCOCtx/@mode"/></c:set>
+            <iman:mooMode name="_ncifUCOCtx_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifUCOCtx = new UiObject();
+         <c:if test="${edasRights.target.ncifUCOCtx.writeable}">
+            addToNotificationList('ncifUCOCtx', 'uih_mvSelect');
+            addActionHandler('ncifUCOCtx', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>
+	

@@ -1,0 +1,36 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifCAOrgUnit.jspf"  %>  
+	--%>
+
+      <%-- ncifCAOrgUnit --%>
+      <TR>
+         <TD align="left" colspan="2">
+            <c:out value="${ncifCAOrgUnitDisplayName}"/>:&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.ncifCAOrgUnit.writeable}">
+               <INPUT type="hidden" name="eDir$target$ncifCAOrgUnit" value="<c:out value="${eDir$target$ncifCAOrgUnit}" escapeXml="false"/>">
+            </c:if>
+            <INPUT type="text" name="_ncifCAOrgUnit" id="spinner_ncifCAOrgUnit" value="<x:out select="$edasXml/edas/ncifCAOrgUnit/value"/>" size=60  maxlength=64512 onchange='return validateLengthField(this, 0, 64512); postUiHandlerEvent("ncifCAOrgUnit", "change")'<c:if test="${!edasRights.target.ncifCAOrgUnit.writeable}">DISABLED</c:if> >
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/ncifCAOrgUnit/@mode"/></c:set>
+            <iman:mooMode name="_ncifCAOrgUnit_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_ncifCAOrgUnit = new UiObject();
+         <c:if test="${edasRights.target.ncifCAOrgUnit.writeable}">
+            addToNotificationList('ncifCAOrgUnit', 'uih_textfield');
+            addActionHandler('ncifCAOrgUnit', 'uiah_textfield');
+         </c:if>
+      </SCRIPT>
+      <SCRIPT>
+         window.uiObject_ncifCAOrgUnit.m_lowerBound = 0;
+         window.uiObject_ncifCAOrgUnit.m_upperBound = 64512;
+         window.uiObject_ncifCAOrgUnit.m_type = "string";
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+

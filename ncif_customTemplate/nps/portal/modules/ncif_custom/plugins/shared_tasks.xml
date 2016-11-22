@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugins>
+
+	<task>
+		<id>ncif_custom_DeviceTemplate_Modification_shared</id>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<merge-template>ncif_custom.ncif_custom_DeviceTemplate_Modification</merge-template>
+		<error-template>dev.GenErr</error-template>
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>task.ncif_custom_task_DeviceTemplate_Modification</display-name-key>
+		<order>500</order>
+		<url-param>
+			<param-key>eDirSearch</param-key>
+			<param-value>Computer</param-value>
+		</url-param>
+		<defaultDisplayName>DeviceTemplate Modification</defaultDisplayName>
+		<taskType>snapinTask</taskType>
+		<object-type-name>ncifDeviceTemplate</object-type-name>
+		<module>ncif_custom</module>
+		<last-updated-by-imanager-version>2.7.7</last-updated-by-imanager-version>
+		<class-name>com.novell.emframe.dev.eDirAccessService</class-name>
+
+		<rights-assignment>
+			<attribute-name>ncifServiceType</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDHCPInterfaces</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifSoftFile</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifServerType</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifDiskDevices</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifPartFile</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>Object Class</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifKeyBoard</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifLanguage</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifHWClock</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMKeys</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+	</task>
+	
+	<task>
+		<id>ncif_custom_ServiceType_Modification_shared</id>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<merge-template>ncif_custom.ncif_custom_ServiceType_Modification</merge-template>
+		<error-template>dev.GenErr</error-template>
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>task.ncif_custom_task_ServiceType_Modification</display-name-key>
+		<order>500</order>
+		<url-param>
+			<param-key>eDirSearch</param-key>
+			<param-value>AFP_Server</param-value>
+		</url-param>
+		<defaultDisplayName>Service Type Modification</defaultDisplayName>
+		<taskType>snapinTask</taskType>
+		<object-type-name>ncifServiceType</object-type-name>
+		<module>ncif_custom</module>
+		<last-updated-by-imanager-version>2.7.7</last-updated-by-imanager-version>
+		<class-name>com.novell.emframe.dev.eDirAccessService</class-name>
+		<rights-assignment>
+			<attribute-name>ncifXMLSnippets</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>Object Class</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+	</task>
+</plugins>

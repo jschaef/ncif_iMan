@@ -1,0 +1,33 @@
+      <%-- @CUSTOMER.ATTR.PREFIX.ATTR@Company --%>
+      <TR>
+         <TD align="left" colspan="2">
+            @CUSTOMER.CAMEL@ Company Selection:<%= ncif_mandatory %>&nbsp;&nbsp;
+         </TD>
+      </TR>
+      <TR>
+         <TD>
+            <c:if test="${edasRights.target.@CUSTOMER.ATTR.PREFIX.ATTR@Company.writeable}">
+               <INPUT type="hidden" name="eDir$target$@CUSTOMER.ATTR.PREFIX.ATTR@Company" value="<c:out value="${eDir$target$@CUSTOMER.ATTR.PREFIX.ATTR@Company}" escapeXml="false"/>">
+            </c:if>
+            <SCRIPT>window.lastSelectedItem_@CUSTOMER.ATTR.PREFIX.ATTR@Company = null; </SCRIPT>
+            <SELECT name="_@CUSTOMER.ATTR.PREFIX.ATTR@Company" id="_@CUSTOMER.ATTR.PREFIX.ATTR@Company" style="width:<iman:string key="UI.textboxPixel"/>" onchange="onMVSelectChange('@CUSTOMER.ATTR.PREFIX.ATTR@Company', this)">
+               <OPTION value=""><iman:string key="Studio.selectAnItem"/>
+				<%= getSelectOptionsFromList( request, ncsCommon.getTree().getOe(), "@CUSTOMER.ATTR.PREFIX.ATTR@Company", "@CUSTOMER.ATTR.PREFIX.ATTR@Company" ) %>
+            </SELECT>
+         </TD>
+         <TD valign="top">
+            <c:set var="mode"><x:out select="$edasXml/edas/@CUSTOMER.ATTR.PREFIX.ATTR@Company/@mode"/></c:set>
+            <iman:mooMode name="_@CUSTOMER.ATTR.PREFIX.ATTR@Company_mode" value="${mode}" multi="true" />
+         </TD>
+      </TR>
+      <SCRIPT>
+         window.uiObject_@CUSTOMER.ATTR.PREFIX.ATTR@Company = new UiObject();
+         <c:if test="${edasRights.target.@CUSTOMER.ATTR.PREFIX.ATTR@Company.writeable}">
+            addToNotificationList('@CUSTOMER.ATTR.PREFIX.ATTR@Company', 'uih_mvSelect');
+            addActionHandler('@CUSTOMER.ATTR.PREFIX.ATTR@Company', 'uiah_mvSelect');
+         </c:if>
+      </SCRIPT>
+      <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>
+	

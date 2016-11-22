@@ -1,0 +1,36 @@
+	<%--
+		<%@ include file="/portal/modules/ncif_custom/skins/default/devices/include/ncifDNSServers.jspf"  %>
+	--%>
+	
+	<%-- ncifDNSServers --%>
+   <TR>
+      <TD align="left" colspan="2">
+         DNS Server(s) (prioritized, i.e. 10.2.87.4#1):<%= ncif_mandatory %>&nbsp;&nbsp;
+      </TD>
+   </TR>
+   <TR>
+      <TD>
+         <c:if test="${edasRights.target.ncifDNSServers.writeable}">
+            <INPUT type="hidden" name="eDir$target$ncifDNSServers" value="<c:out value="${eDir$target$ncifDNSServers}" escapeXml="false"/>">
+         </c:if>
+         <x:set var="MVStringEditor_xmlNodeSet" select="$edasXml/edas/ncifDNSServers" scope="request"/>
+         <iman:mved maxLength="64512" 
+						  regExpression="^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])(#[0-9]{1,3})?$" 
+						  regExpressionMsg="Please provide a valid prioritized DNS Server (e.g. 10.2.87.4#1)" 
+						  readonly="${!edasRights.target.ncifDNSServers.writeable}" enforceUnique="true" ignoreCase="true" minLength="0" name="_ncifDNSServers" 
+						  />
+			</TD>
+      <TD valign="top">
+         <c:set var="mode"><x:out select="$edasXml/edas/ncifDNSServers/@mode"/></c:set>
+         <iman:mooMode name="_ncifDNSServers_mode" value="${mode}" multi="true" />
+      </TD>
+   </TR>
+   <SCRIPT>
+      window.uiObject_ncifDNSServers = new UiObject();
+      <c:if test="${edasRights.target.ncifDNSServers.writeable}">
+         addToNotificationList('ncifDNSServers', 'uih_mvStringEditor');
+      </c:if>
+   </SCRIPT>
+   <TR><TD height="9"></TD></TR>
+
+	<%	ncif_mandatory			=	""; // reset  %>

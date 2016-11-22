@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugins>
+
+   <task>
+      <id>shared_task_ncsEMEADisplay</id>
+      <version>2.0.0</version>
+      <required-version>2.0.0</required-version>
+      <class-name>com.novell.emframe.dev.EmptyTask</class-name>
+      <merge-template>ncsEMEA.task_ncsDisplay</merge-template> 
+      <display-name-key>task_ncsEMEADisplay</display-name-key>
+      <description-key>task_ncsEMEADisplay</description-key>
+      <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+      <url-param>
+         <param-key>ncsEMEA_test</param-key>
+         <param-value>debug</param-value>
+      </url-param>
+   </task>
+
+   <task>
+      <id>shared_task_ncsEMEADeleteObjects</id>
+      <version>2.0.0</version>
+      <required-version>2.0.0</required-version>
+      <type>snapinTask</type>
+      <class-name>java:com.novell.emframe.fw.DeleteObjectTask</class-name>
+      <merge-template>fw.DelObject</merge-template>
+      <display-name-key>DeleteObjectTaskDisplayName</display-name-key>
+      <description-key>DeleteObjectsDescription</description-key>
+      <error-template>dev.GenFatal</error-template>
+      <resource-properties-file>BaseResources</resource-properties-file>
+      <object-type-name>*</object-type-name>
+      <url-param>
+         <param-key>objectTypeName</param-key>
+         <param-value>*</param-value>
+      </url-param>
+      <url-param>
+         <param-key>mooEnabled</param-key>
+         <param-value>true</param-value>
+      </url-param>
+      <rights-assignment>
+         <attribute-name>[Entry Rights]</attribute-name>
+         <privilege>Browse</privilege>
+         <privilege>Delete</privilege>
+      </rights-assignment>
+      <gadget-assignable>false</gadget-assignable>
+      <frame-type>Full</frame-type>
+   </task>
+
+   <task>
+      <id>shared_task_ncsEMEARenameObject</id>
+      <version>2.0.0</version>
+      <required-version>2.0.0</required-version>
+      <type>snapinTask</type>
+      <class-name>java:com.novell.emframe.fw.RenameObjectTask</class-name>
+      <merge-template>fw.RenameObject</merge-template>
+      <display-name-key>RenameObjectTaskDisplayName</display-name-key>
+      <description-key>RenameObjectDescription</description-key>
+      <error-template>dev.GenFatal</error-template>
+      <resource-properties-file>BaseResources</resource-properties-file>
+      <object-type-name>*</object-type-name>
+      <rights-assignment>
+         <attribute-name>[Entry Rights]</attribute-name>
+         <privilege>Browse</privilege>
+         <privilege>Rename</privilege>
+         <privilege>Create</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>CN</attribute-name>
+         <privilege>Read</privilege>
+         <privilege>Write</privilege>
+         <privilege>Compare</privilege>
+      </rights-assignment>
+      <gadget-assignable>false</gadget-assignable>
+      <frame-type>Full</frame-type>
+   </task>
+
+   <task>
+      <id>shared_task_ncsEMEALdifExport</id>
+      <version>2.0.0</version>
+      <required-version>2.0.0</required-version>
+      <class-name>com.novell.emframe.dev.EmptyTask</class-name>
+      <merge-template>ncsEMEA.task_ncsLdifExport</merge-template> 
+      <display-name-key>shared_task_ncsLdifExport</display-name-key>
+      <description-key>shared_task_ncsLdifExport</description-key>
+      <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+   </task>
+
+   <task>
+      <id>shared_task_ncsAjax_results</id>
+      <version>2.0.0</version>
+      <required-version>2.0.0</required-version>
+      <class-name>com.novell.emframe.dev.EmptyTask</class-name>
+      <merge-template>ncsEMEA.task_ncsAjax_results</merge-template> 
+      <display-name-key>shared_task_ncsAjax_results</display-name-key>
+      <description-key>shared_task_ncsAjax_results</description-key>
+      <resource-properties-file>com.novell.ncsEMEA.resources</resource-properties-file>
+   </task>
+
+   <task>
+      <id>shared_task_ncsSetPassword</id>
+      <version>2.5.0</version>
+      <required-version>2.0.0</required-version>
+      <resource-properties-file>BaseResources</resource-properties-file>
+      <display-name-key>SetPasswordTaskDisplayName</display-name-key>
+      <description>This task sets the selected users password</description>
+      <frame-type>Full</frame-type>
+      <object-type-name>ndsLoginProperties</object-type-name>
+      <class-name>com.novell.emframe.base.SetPasswordTask</class-name>
+      <rights-assignment>
+         <attribute-name>Password Management</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>SAS:Login Configuration</attribute-name>
+         <privilege>Write</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>SAS:Login Configuration Key</attribute-name>
+         <privilege>Write</privilege>
+      </rights-assignment>
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>mozilla</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+      <type>snapinTask</type>
+      <merge-template>base.SetPass</merge-template>
+      <error-template>dev.GenFatal</error-template>
+      <gadget-assignable>false</gadget-assignable>
+   </task>
+
+
+   <task>
+      <id>shared_task_ncsSetPassword2</id>
+      <version>2.5.0</version>
+      <required-version>2.0.0</required-version>
+      <resource-properties-file>BaseResources</resource-properties-file>
+      <display-name-key>SetPasswordTaskDisplayName</display-name-key>
+      <description>This task sets the selected users password</description>
+      <frame-type>Full</frame-type>
+      <object-type-name>ndsLoginProperties</object-type-name>
+      <class-name>com.novell.emframe.base.SetPasswordTask</class-name>
+      <rights-assignment>
+         <attribute-name>Password Management</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>SAS:Login Configuration</attribute-name>
+         <privilege>Write</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>SAS:Login Configuration Key</attribute-name>
+         <privilege>Write</privilege>
+      </rights-assignment>
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>mozilla</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+      <type>snapinTask</type>
+      <merge-template>ncsEMEA.task_ChangePassword</merge-template>
+      <error-template>dev.GenFatal</error-template>
+      <gadget-assignable>false</gadget-assignable>
+   </task>
+
+
+   <task>
+      <id>shared_task_ncsSetPassword3</id>
+      <version>2.5.0</version>
+      <required-version>2.0.0</required-version>
+      <resource-properties-file>BaseResources</resource-properties-file>
+      <display-name-key>SetPasswordTaskDisplayName</display-name-key>
+      <description>This task sets the selected users password</description>
+      <frame-type>Full</frame-type>
+      <object-type-name>ndsLoginProperties</object-type-name>
+      <class-name>com.novell.emframe.base.SetPasswordTask</class-name>
+      <rights-assignment>
+         <attribute-name>Password Management</attribute-name>
+         <privilege>Supervisor</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>SAS:Login Configuration</attribute-name>
+         <privilege>Write</privilege>
+      </rights-assignment>
+      <rights-assignment>
+         <attribute-name>SAS:Login Configuration Key</attribute-name>
+         <privilege>Write</privilege>
+      </rights-assignment>
+      <supported-device-type>browser</supported-device-type>
+      <supported-device-type>default</supported-device-type>
+      <supported-device-type>mozilla</supported-device-type>
+      <supported-device-type>pocket</supported-device-type>
+      <type>snapinTask</type>
+      <merge-template>ncsEMEA.task_SetPass</merge-template>
+      <error-template>dev.GenFatal</error-template>
+      <gadget-assignable>false</gadget-assignable>
+   </task>
+
+
+</plugins>

@@ -1,0 +1,84 @@
+<install>
+
+	<module>
+		<id>ncif_custom</id>
+		<version>2.2.@TIMESTAMP@</version>
+		<required-version>2.7.0</required-version>
+		<expired-version>2.9.0</expired-version>
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>module.ncif_custom</display-name-key>
+		<description-key>module.description</description-key>
+	</module>
+
+	<category>
+		<id>ncif_category</id>
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>category.ncif_custom</display-name-key>
+		<description-key>category.ncif_description</description-key>
+	</category>
+
+	<role>
+		<id>ncif_custom_Management</id>
+		<version>1.2</version>
+		<required-version>2.7.0</required-version>
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>role.ncif_custom_Management</display-name-key>
+		<order>500</order>
+		<role-category-assignment>ncif_category</role-category-assignment>
+	</role>
+<!--	
+	<task>
+		<id>ncif_custom_task_ZCM_Location_Creation</id>
+		<version>1.0</version>
+		<required-version>1.0</required-version>
+		<merge-template>ncif_custom.ncif_custom_ZCM_Location_Creation</merge-template>
+		<error-template>dev.GenErr</error-template>
+		<resource-properties-file>com.novell.ncif_custom.resources</resource-properties-file>
+		<display-name-key>task.ncif_custom_task_ZCM_Location_Creation</display-name-key>	
+		<order>500</order>
+		<url-param>
+			<param-key>TC.multipleObjectEnabled</param-key>
+			<param-value>true</param-value>
+		</url-param>
+		<url-param>
+			<param-key>TC.advancedSelectionEnabled</param-key>
+			<param-value>true</param-value>
+		</url-param>
+		<url-param>
+			<param-key>TC.mode</param-key>
+			<param-value />
+		</url-param>
+		<url-param>
+			<param-key>eDirSearch</param-key>
+			<param-value>Organizational_Unit</param-value>
+		</url-param>
+		<defaultDisplayName>ZCM Location Creation</defaultDisplayName>
+		<taskType>snapinTask</taskType>
+		<object-type-name>ncifConfiguration</object-type-name>
+		<module>ncif_custom</module>
+		<last-updated-by-imanager-version>2.7.7</last-updated-by-imanager-version>
+		<class-name>com.novell.emframe.dev.eDirAccessService</class-name>
+		<role-assignment>ncif_custom_Management</role-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMRsyncBandwidthLimit</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMOSUIDKey</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMLanguageUIDKey</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>Object Class</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+		<rights-assignment>
+			<attribute-name>ncifZCMMSOfficeUIDKey</attribute-name>
+			<privilege>Supervisor</privilege>
+		</rights-assignment>
+	</task>
+-->
+</install>

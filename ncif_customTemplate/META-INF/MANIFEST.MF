@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Module-ID: ncif_@CUSTOMER.LOWER@
+Implementation-Title: ncif_@CUSTOMER.LOWER@
+Implementation-Version: @NCIF_VERSION@
+Ant-Version: Apache Ant 1.9.4
+Max-iManager-Version: 2.9.0
+RBS-DisplayName: Novell Consulting Installation Framework (@CUSTOMER.CAMEL@ @CUSTOMER_ENV.UPPER@)
+Created-By: 1.5.0 (Free Software Foundation, Inc.)
+Bundle-Vendor: Novell
+Implementation-Description: @NCIF-DESCRIPTION@
+Min-iManager-Version: 2.7.0
+
